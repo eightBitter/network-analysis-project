@@ -1,0 +1,156 @@
+[
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column subjectTerms using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "subjectTerms",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column subjectTerms using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "subjectTerms",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column subjectTerms using expression grel:value.replace(\" , \",\", \")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "subjectTerms",
+    "expression": "grel:value.replace(\" , \",\", \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column subjects using expression value.trim()",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "subjects",
+          "expression": "isBlank(value).toString()",
+          "columnName": "subjects",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "false",
+                "l": "false"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "subjects",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column subjects using expression grel:value.replace(\" , \",\", \")",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "subjects",
+          "expression": "isBlank(value).toString()",
+          "columnName": "subjects",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "false",
+                "l": "false"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "subjects",
+    "expression": "grel:value.replace(\" , \",\", \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Title to ArticleTitle",
+    "oldColumnName": "Title",
+    "newColumnName": "ArticleTitle"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column pubtitle to JournalTitle",
+    "oldColumnName": "pubtitle",
+    "newColumnName": "JournalTitle"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column year to PublishYear",
+    "oldColumnName": "year",
+    "newColumnName": "PublishYear"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column subjectTerms to SubjectTerms",
+    "oldColumnName": "subjectTerms",
+    "newColumnName": "SubjectTerms"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column subjects to Subjects",
+    "oldColumnName": "subjects",
+    "newColumnName": "Subjects"
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "Domain",
+      "JournalTitle",
+      "ArticleTitle",
+      "PublishYear",
+      "Keywords",
+      "SubjectTerms",
+      "Subjects"
+    ]
+  }
+]

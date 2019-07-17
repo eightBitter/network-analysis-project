@@ -1,0 +1,94 @@
+[
+  {
+    "op": "core/fill-down",
+    "description": "Fill down cells in column Domain",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Domain"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column JN using expression grel:value.replace(\"['\",\"\").replace(\"']\",\"\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "JN",
+    "expression": "grel:value.replace(\"['\",\"\").replace(\"']\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column PY",
+    "columnName": "PY"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column KW using expression grel:value.replace(\"[\",\"\").replace(\"]\",\"\").replace(\"'\",\"\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "KW",
+    "expression": "grel:value.replace(\"[\",\"\").replace(\"]\",\"\").replace(\"'\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column DE using expression grel:value.replace(\"[\",\"\").replace(\"]\",\"\").replace(\"'\",\"\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DE",
+    "expression": "grel:value.replace(\"[\",\"\").replace(\"]\",\"\").replace(\"'\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column SU using expression grel:value.replace(\"[\",\"\").replace(\"]\",\"\").replace(\"'\",\"\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "SU",
+    "expression": "grel:value.replace(\"[\",\"\").replace(\"]\",\"\").replace(\"'\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column DT using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DT",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column DT using expression grel:value.replace(\"2.\",\"2\").replace(\"E7\",\"\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DT",
+    "expression": "grel:value.replace(\"2.\",\"2\").replace(\"E7\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
